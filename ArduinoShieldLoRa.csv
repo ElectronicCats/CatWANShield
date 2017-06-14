@@ -1,0 +1,10 @@
+Reference, Value, Footprint, Datasheet, MP, Package, Availability, MF, Description, #manf
+U2,74HC4050D,ArduinoShieldLoRa:74HC4050D,0.45 USD,74HC4050D,SOIC-16 NXP Semiconductors,Good,NXP Semiconductors,Hex high-to-low level shifter 74HC4050D,"74HC4050D,653"
+U1,RFM95,ArduinoShieldLoRa:RFM95,,,,,,,
+A1,ANT,ArduinoShieldLoRa:SMA_EDGELAUNCH_UFL,,,,,,,
+U3,AP2112K-3.3,ArduinoShieldLoRa:AP2112K-3.3,,,,,,,AP2112K-3.3TRG1
+R1,100K,Resistors_SMD:R_0603_HandSoldering,,,,,,,
+C1,10uF,Capacitors_SMD:C_0603_HandSoldering,,,,,,,GRM188C80G106KE47J
+C2,0.1uF,Capacitors_SMD:C_0603_HandSoldering,,,,,,,0201ZD104KAT2A
+C3,10uF,Capacitors_SMD:C_0603_HandSoldering,,,,,,,GRM188C80G106KE47J
+J1,CONN_01X03,Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm,,,,,,,
