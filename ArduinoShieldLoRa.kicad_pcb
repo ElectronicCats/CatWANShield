@@ -2,7 +2,7 @@
 
   (general
     (links 42)
-    (no_connects 1)
+    (no_connects 0)
     (area 110.922999 72.949999 179.653001 126.440001)
     (thickness 1.6)
     (drawings 27)
