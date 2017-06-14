@@ -1,9 +1,9 @@
 (kicad_pcb (version 4) (host pcbnew 4.0.6)
 
   (general
-    (links 0)
+    (links 43)
     (no_connects 0)
-    (area 110.922999 72.949999 179.653001 126.440001)
+    (area 101.438899 71.542 182.071334 127.694)
     (thickness 1.6)
     (drawings 31)
     (tracks 208)
@@ -69,7 +69,7 @@
     (grid_origin 110.998 126.365)
     (visible_elements FFFFFF7F)
     (pcbplotparams
-      (layerselection 0x00030_80000001)
+      (layerselection 0x010f0_80000001)
       (usegerberextensions false)
       (excludeedgelayer true)
       (linewidth 0.100000)
@@ -90,9 +90,9 @@
       (subtractmaskfromsilk false)
       (outputformat 1)
       (mirror false)
-      (drillshape 1)
+      (drillshape 0)
       (scaleselection 1)
-      (outputdirectory ""))
+      (outputdirectory gerber_LoRa_shield/))
   )
 
   (net 0 "")
