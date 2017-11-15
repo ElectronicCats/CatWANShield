@@ -8,3 +8,7 @@ ArduinoShieldLoRa\.bak
 ArduinoShieldLoRa\.kicad_pcb
 
 ArduinoShieldLoRa\.kicad_pcb-bak
+
+Examples/\.DS_Store
+
+\.DS_Store
