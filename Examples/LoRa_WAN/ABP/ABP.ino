@@ -9,19 +9,19 @@
   Example
  *******************************************************************************/
 
-
 #include <lmic.h>
 #include <hal/hal.h>
 #include <SPI.h>
 #include <math.h>
 #include <SoftwareSerial.h>
 
-#define _USE_GPS_
-//#define _USE_TEMP_
+//#define _USE_GPS_
+#define _USE_TEMP_
+//#define _USE_ULTRASONIC_
 
 #ifdef _USE_GPS_
 #include <TinyGPS++.h>
-SoftwareSerial ss(5, 4);
+SoftwareSerial ss(6, 5);
 TinyGPSPlus gps;
 double gps_lat = 0;
 double gps_lng = 0;
@@ -29,14 +29,21 @@ double gps_alt = 0;
 bool gpsEncoded = false;
 #endif
 
+#ifdef _USE_ULTRASONIC_
+const int trigPin = 7;
+const int echoPin = 8;
+#endif
+
 
 #define debugSerial Serial
 
 unsigned long previousMillis = 0;
 
-static const PROGMEM u1_t NWKSKEY[16] ={0x34,0x49,0x35,0x48,0x35,0x83,0x48,0x53,0x94,0x3F,0xFF,0xF3,0x49,0x83,0xF9,0x31};
-static const u1_t PROGMEM APPSKEY[16] ={0x23,0x93,0xE2,0x98,0x42,0x94,0x23,0x98,0x42,0x34,0x98,0x34,0x94,0x98,0xAA,0xAA};
-static const u4_t DEVADDR =0x75323456;
+
+static const PROGMEM u1_t NWKSKEY[16] ={0x98,0xBB,0x8C,0x22,0xFC,0x0D,0x1F,0xB5,0xEF,0x8E,0xA2,0x90,0x76,0xFB,0xCF,0xA7};
+static const u1_t PROGMEM APPSKEY[16] ={0xA4,0x98,0xF9,0x32,0xDF,0x71,0xDC,0x0A,0xB2,0xA6,0x15,0x77,0xC4,0xC4,0xCC,0xE7};
+static const u4_t DEVADDR =0x077ce77f;
+
 
 void os_getArtEui (u1_t* buf) { }
 void os_getDevEui (u1_t* buf) { }
@@ -105,13 +112,13 @@ void onEvent (ev_t ev) {
   }
 }
 
-void do_send(osjob_t* j, uint8_t *mydata, uint16_t len) {
+void do_send(osjob_t* j, uint8_t *mydata1, uint16_t len) {
   // Check if there is not a current TX/RX job running
   if (LMIC.opmode & OP_TXRXPEND) {
     debugSerial.println(F("[LMIC] OP_TXRXPEND, not sending"));
   } else {
-    // Prepare upstream data transmission at the next possible time.
-    LMIC_setTxData2(1, mydata, len, 0);
+    // Prepare upstream data transmission at the next possible time
+    LMIC_setTxData2(1, mydata1, len, 0);
   }
 }
 
@@ -121,16 +128,14 @@ void setup() {
   debugSerial.begin(115200);
   debugSerial.println(F("[INFO] LoRa Demo Node 1 Demonstration"));
 
-  //initialise LED as output and at low state
-  pinMode(A1, OUTPUT);
-  pinMode(A0, OUTPUT);
-  digitalWrite(A1, LOW);
-  digitalWrite(A0, HIGH);
-  delay(250);
-  digitalWrite(A0, LOW);
   // start GPS object
   #ifdef _USE_GPS_
   ss.begin(9600);
+  #endif
+
+  #ifdef _USE_ULTRASONIC_
+  pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
+  pinMode(echoPin, INPUT); // Sets the echoPin as an Input
   #endif
 
   os_init();
@@ -142,11 +147,24 @@ void setup() {
   memcpy_P(nwkskey, NWKSKEY, sizeof(NWKSKEY));
 
   LMIC_setSession (0x1, DEVADDR, nwkskey, appskey);
-  //LMIC_selectSubBand(3);
+  //LMIC_selectSubBand(2);
   for (int channel=0; channel<72; ++channel) {
       LMIC_disableChannel(channel);
     }
-
+  //SF TTN
+  /*
+      LMIC_enableChannel(8);
+      LMIC_enableChannel(9);
+      LMIC_enableChannel(10);  //904.3Mhz
+      LMIC_enableChannel(11);
+      LMIC_enableChannel(12);
+      LMIC_enableChannel(13);
+      LMIC_enableChannel(14);
+      LMIC_enableChannel(15);
+      LMIC_enableChannel(65); 
+   */
+  //Home
+    
       LMIC_enableChannel(48);
       LMIC_enableChannel(49);
       LMIC_enableChannel(50);
@@ -156,7 +174,7 @@ void setup() {
       LMIC_enableChannel(54);
       LMIC_enableChannel(55);
       LMIC_enableChannel(70);
-
+  
   LMIC_setLinkCheckMode(0);
   LMIC_setAdrMode(false);
   LMIC_setDrTxpow(DR_SF7, 14); //SF7
@@ -166,9 +184,6 @@ void setup() {
 }
 
 void loop() {
-
-  //GPS_loop();
-
 
   if (millis() > previousMillis + TX_INTERVAL * 1000) { //Start Job at every TX_INTERVAL*1000
 
@@ -181,16 +196,29 @@ void loop() {
 
 void getInfoAndSend() {
 
-  uint8_t len = 0;
+  uint8_t len=0;   //Bug of len
 
-  uint8_t mydata[len];
+  uint8_t mydata[255];
   uint8_t cnt = 0;
   uint8_t ch = 0;
+  debugSerial.println(F("[INFO] Collecting info"));
+ 
+  #ifdef _USE_ULTRASONIC_
+  len+=4;
+  uint16_t distance = readDistance(); 
+  uint8_t Percent = map(distance,1,150,100,0);
+  debugSerial.print(F("[INFO] Distance:")); debugSerial.println(distance);
+  debugSerial.print(F("[INFO] Distance (%):")); debugSerial.println(Percent);  
+  mydata[cnt++] = 0x01;
+  mydata[cnt++] = (distance>>8)&0xFF;
+  mydata[cnt++] = distance&0xFF;
+  mydata[cnt++] = Percent;
+  #endif
+  
   #ifdef _USE_TEMP_// Temperature
-  // Temperature
   len += 4; // temperature
-  debugSerial.println(F("[INFO] Collecting temperature info"));
-  float temp = readTemperature();
+  //float temp = readTemperature();
+  float temp = 10;
   debugSerial.print(F("[INFO] Temperature:")); debugSerial.println(temp);
   int val = round(temp * 10);
   mydata[cnt++] = ch;
@@ -225,20 +253,29 @@ void getInfoAndSend() {
   }
   else{
     digitalWrite(A0, HIGH);
-        ch = ch + 1;
+    debugSerial.println(F("[INFO] Collecting GPS info"));
+    debugSerial.print(F("[INFO] Lat:")); debugSerial.println(String(21.900932, 6));
+    debugSerial.print(F("[INFO] Lng:")); debugSerial.println(String(102.316399, 6));
+    debugSerial.print(F("[INFO] Alt:")); debugSerial.println(1900);
+    long lat = round(1900 * 10000);
+    long lng = round(21.900932 * -10000);
+    long alt = round(102.316399 * 100);
+    ch = ch + 1;
     mydata[cnt++] = ch;
     mydata[cnt++] = 0x88;
-    mydata[cnt++] = 1;
-    mydata[cnt++] = 2;
-    mydata[cnt++] = 3;
-    mydata[cnt++] = 4;
-    mydata[cnt++] = 5;
-    mydata[cnt++] = 6;
-    mydata[cnt++] = 7;
-    mydata[cnt++] = 8;
-    mydata[cnt++] = 9;
+    mydata[cnt++] = lat >> 16;
+    mydata[cnt++] = lat >> 8;
+    mydata[cnt++] = lat;
+    mydata[cnt++] = lng >> 16;
+    mydata[cnt++] = lng >> 8;
+    mydata[cnt++] = lng;
+    mydata[cnt++] = alt >> 16;
+    mydata[cnt++] = alt >> 8;
+    mydata[cnt++] = alt;
   }
   #endif
+
+  
 
   if (cnt == len) {
     debugSerial.println(F("[LMIC] Start Radio TX"));
@@ -269,6 +306,25 @@ float readTemperature() {
 }
 #endif
 
+
+#ifdef _USE_ULTRASONIC_
+uint16_t readDistance(void){
+   long duration;
+    uint16_t distance;
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
+    // Sets the trigPin on HIGH state for 10 micro seconds
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+    // Reads the echoPin, returns the sound wave travel time in microseconds
+    duration = pulseIn(echoPin, HIGH);
+    // Calculating the distance
+    distance= duration*0.034/2;
+    return distance;
+}
+#endif
+    
 #ifdef _USE_GPS_
 void GPS_loop() {
   if (!ss.isListening()) {

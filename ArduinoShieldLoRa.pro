@@ -1,4 +1,4 @@
-update=Thursday, 29 June 2017 'pmt' 18:16:46
+update=Wednesday, 23 May 2018 'amt' 11:42:31
 version=1
 last_client=kicad
 [pcbnew]
@@ -25,6 +25,16 @@ version=1
 NetIExt=net
 [general]
 version=1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
 [eeschema]
 version=1
 LibDir=
@@ -59,6 +69,4 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
-LibName31=74HC4050D/74HC4050D
-LibName32=/Users/eduardocontreras/Documents/Electronic Cats/Proyectos/CatSat/CatSat.pretty/rfm95
-LibName33=/Users/eduardocontreras/Documents/Electronic Cats/Proyectos/LoraCat/LoRaCatKitty/NodeLoRaGroveKitty-cache
+LibName31=Library/ArduinoShieldLoRa

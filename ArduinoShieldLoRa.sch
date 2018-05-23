@@ -30,8 +30,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:74HC4050D
-LIBS:rfm95
-LIBS:NodeLoRaGroveKitty-cache
+LIBS:ArduinoShieldLoRa
 LIBS:ArduinoShieldLoRa-cache
 EELAYER 25 0
 EELAYER END
@@ -242,17 +241,6 @@ F 7 "NXP Semiconductors" H 3000 4400 50  0001 L BNN "MF"
 F 8 "Hex high-to-low level shifter 74HC4050D" H 3000 4400 50  0001 L BNN "Description"
 F 9 "74HC4050D,653" H 3000 4400 60  0001 C CNN "#manf"
 	1    3000 4400
-	1    0    0    -1  
-$EndComp
-$Comp
-L RFM95-RESCUE-ArduinoShieldLoRa U1
-U 1 1 593EC92C
-P 4600 4900
-F 0 "U1" H 4500 5900 60  0000 C CNN
-F 1 "RFM95" H 4600 4900 60  0000 C CNN
-F 2 "ArduinoShieldLoRa:RFM95" H 4600 4900 60  0001 C CNN
-F 3 "" H 4600 4900 60  0000 C CNN
-	1    4600 4900
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -779,4 +767,15 @@ F 3 "" H 5900 4750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 5650 4750
+$Comp
+L RFM95-RESCUE-ArduinoShieldLoRa U?
+U 1 1 5B05A30B
+P 4600 4900
+F 0 "U?" H 4500 5900 60  0000 C CNN
+F 1 "RFM95" H 4600 4900 60  0000 C CNN
+F 2 "" H 4600 4900 60  0000 C CNN
+F 3 "" H 4600 4900 60  0000 C CNN
+	1    4600 4900
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
