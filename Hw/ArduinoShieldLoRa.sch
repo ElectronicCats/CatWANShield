@@ -37,8 +37,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Arduino LoRa Shield"
-Date "2017-06-12"
-Rev "v0.1"
+Date "2018-07-24"
+Rev "v1.0"
 Comp "Electronic Cats"
 Comment1 "Eduardo Contreras"
 Comment2 ""
