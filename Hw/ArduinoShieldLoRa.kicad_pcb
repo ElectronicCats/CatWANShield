@@ -2024,7 +2024,7 @@
   )
 
   (module Aesthetics:titule_electronic_med (layer B.Cu) (tedit 5B159EA5) (tstamp 5B57CDEB)
-    (at 150 98 180)
+    (at 150 98.25 180)
     (descr "Imported from ec.svg")
     (tags svg2mod)
     (attr smd)
@@ -2859,9 +2859,9 @@
   (gr_line (start 179.6 88.5) (end 177 86) (layer Edge.Cuts) (width 0.15))
   (gr_line (start 176.8 123.8) (end 179.6 121) (layer Edge.Cuts) (width 0.15))
   (gr_line (start 176.8 125.8) (end 176.8 123.8) (layer Edge.Cuts) (width 0.15))
-  (gr_arc (start 145.3 116.9) (end 145.1 115) (angle 99.58534033) (layer F.SilkS) (width 0.15))
-  (gr_arc (start 145.3 116.8) (end 145.5 116.2) (angle 62.10272897) (layer F.SilkS) (width 0.15))
-  (gr_arc (start 145.4 116.8) (end 145.4 115.6) (angle 96.00900596) (layer F.SilkS) (width 0.15))
+  (gr_arc (start 145.8 115.15) (end 145.6 113.25) (angle 99.58534033) (layer F.SilkS) (width 0.15))
+  (gr_arc (start 145.8 115.05) (end 146 114.45) (angle 62.10272897) (layer F.SilkS) (width 0.15))
+  (gr_arc (start 145.9 115.05) (end 145.9 113.85) (angle 96.00900596) (layer F.SilkS) (width 0.15))
   (gr_line (start 122.428 114.3) (end 122.428 123.19) (angle 90) (layer Dwgs.User) (width 0.15))
   (gr_line (start 109.093 123.19) (end 109.093 114.3) (angle 90) (layer Dwgs.User) (width 0.15))
   (gr_line (start 122.428 123.19) (end 109.093 123.19) (angle 90) (layer Dwgs.User) (width 0.15))
@@ -2879,19 +2879,19 @@
   (gr_line (start 178.435 102.235) (end 173.355 102.235) (angle 90) (layer Dwgs.User) (width 0.15))
   (gr_line (start 178.435 94.615) (end 178.435 102.235) (angle 90) (layer Dwgs.User) (width 0.15))
   (gr_line (start 173.355 102.235) (end 173.355 94.615) (angle 90) (layer Dwgs.User) (width 0.15))
-  (gr_text "CatWAN Shield" (at 137.5 117.7) (layer F.SilkS)
+  (gr_text "CatWAN Shield" (at 138 115.95) (layer F.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
-  (gr_text "Node ID" (at 127.25 95.5) (layer F.SilkS)
+  (gr_text "Node ID" (at 127.25 91.5) (layer F.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
-  (gr_text NOTES (at 126.25 105) (layer F.SilkS)
+  (gr_text NOTES (at 126.25 103) (layer F.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
-  (gr_text 1 (at 136 124 90) (layer F.SilkS)
+  (gr_text 1 (at 136 124.25 90) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (gr_text "Version 1.0" (at 136 120 360) (layer F.SilkS)
+  (gr_text "Version 1.0" (at 136.5 118.25 360) (layer F.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
 
@@ -3126,12 +3126,12 @@
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
     (polygon
       (pts
-        (xy 123 103) (xy 152 103) (xy 152 97) (xy 123 97)
+        (xy 123 99.25) (xy 152 99.25) (xy 152 93.25) (xy 123 93.25)
       )
     )
     (filled_polygon
       (pts
-        (xy 151.873 102.873) (xy 123.127 102.873) (xy 123.127 97.127) (xy 151.873 97.127)
+        (xy 151.873 99.123) (xy 123.127 99.123) (xy 123.127 93.377) (xy 151.873 93.377)
       )
     )
   )
@@ -3141,12 +3141,12 @@
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
     (polygon
       (pts
-        (xy 123 112) (xy 123 106) (xy 152 106) (xy 152 112)
+        (xy 123 110.5) (xy 123 104.5) (xy 152 104.5) (xy 152 110.5)
       )
     )
     (filled_polygon
       (pts
-        (xy 151.873 111.873) (xy 123.127 111.873) (xy 123.127 106.127) (xy 151.873 106.127)
+        (xy 151.873 110.373) (xy 123.127 110.373) (xy 123.127 104.627) (xy 151.873 104.627)
       )
     )
   )
