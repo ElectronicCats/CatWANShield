@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name ArduinoShieldLoRa)(type Legacy)(uri ${KIPRJMOD}/Library/ArduinoShieldLoRa.lib)(options "")(descr ""))
+)
