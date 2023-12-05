@@ -1,8 +1,25 @@
-# LoraShield
+# CatWAN Arduino LoRa Shield
 
-<a href="https://www.tindie.com/stores/electroniccats/?ref=offsite_badges&utm_source=sellers_electroniccats&utm_medium=badges&utm_campaign=badge_large"><img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-larges.png" alt="I sell on Tindie" width="200" height="104"></a>
+<p align="center">
+    <img src="https://github.com/ElectronicCats/CatWANShield/assets/44976441/8de6e8b1-e15e-40ff-b99f-82983276b99c" width="40%">
+    <br><strong>CatWAN Arduino LoRa Shield</strong>
+</p>
 
-This repository contains the KiCad files for an LoRa shield for arduino uno and some examples that may help you to get running your LoRa based applications with the power of an Arduino UNO 
+## Find yours in our official store!
+<a href="https://electroniccats.com/store/loracatshield/">
+  <p align="center">
+  <img src="https://electroniccats.com/wp-content/uploads/badge_store.png" height="130" />
+  </p>
+</a>
+
+## Find yours in TINDIE!
+<a href="https://www.tindie.com/stores/electroniccats/?ref=offsite_badges&utm_source=sellers_electroniccats&utm_medium=badges&utm_campaign=badge_large">
+  <p align="center">
+  <img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-larges.png" height="130" />
+  </p>
+</a>
+
+This repository contains the KiCad files for an LoRa shield for Arduino Uno and some examples that may help you to get running your LoRa-based applications with the power of an Arduino UNO 
 
 - The folder named "LoRA_PHY_RH" refer to the communication
 P2P by the Physical layer of LoRa,in here you can find 2 examples one as the Transmitter (Which also  is capable of receive information) and the second as the receiver (Which also is capable of transmit e information), both examples work with the [RadioHead](http://www.airspayce.com/mikem/arduino/RadioHead/) library  
@@ -15,6 +32,10 @@ P2P by the Physical layer of LoRa,in here you can find 2 examples one as the Tra
 Electronic Cats invests time and resources providing this open source design, please support Electronic Cats and open-source hardware by purchasing products from Electronic Cats!
 
 Designed by Electronic Cats.
+
+## Learn how to use CatWAN Arduino LoRa Shield
+
+Learn how to use the [CatWAN Arduino LoRa Shield by visiting the Wiki](https://github.com/ElectronicCats/CatWANShield/wiki).
 
 # License
 
