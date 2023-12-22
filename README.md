@@ -1,50 +1,44 @@
 # CatWAN Arduino LoRa Shield
 
 <p align="center">
-    <img src="https://github.com/ElectronicCats/CatWANShield/assets/44976441/8de6e8b1-e15e-40ff-b99f-82983276b99c" width="40%">
-    <br><strong>CatWAN Arduino LoRa Shield</strong>
+    <a href="https://github.com/ElectronicCats/CatWANShield/wiki">
+        <img src="https://github.com/ElectronicCats/CatWANShield/assets/44976441/8de6e8b1-e15e-40ff-b99f-82983276b99c"/>
+    </a>
 </p>
 
-## Find yours in our official store!
-<a href="https://electroniccats.com/store/loracatshield/">
-  <p align="center">
-  <img src="https://electroniccats.com/wp-content/uploads/badge_store.png" height="130" />
-  </p>
-</a>
+<p align=center>
+    <a href="https://electroniccats.com/store/loracatshield/">
+        <img src="https://github.com/ElectronicCats/flipper-shields/assets/44976441/0c617467-052b-4ab1-a3b9-ba36e1f55a91" width="200" height="104" />
+    </a>
+    <a href="https://github.com/ElectronicCats/CatWANShield/wiki">
+        <img src="https://github.com/ElectronicCats/flipper-shields/assets/44976441/6aa7f319-3256-442e-a00d-33c8126833ec" width="200" height="104" />
+    </a>
+</p>
 
-## Find yours in TINDIE!
-<a href="https://www.tindie.com/stores/electroniccats/?ref=offsite_badges&utm_source=sellers_electroniccats&utm_medium=badges&utm_campaign=badge_large">
-  <p align="center">
-  <img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-larges.png" height="130" />
-  </p>
-</a>
+With the CatWAN Arduino LoRa Shield, you will be able to unlock the power of LoRa technology for long-range, low-power communication in an Arduino UNO. Seamlessly integrate your Arduino UNO into LoRaWAN networks for a variety of applications.
 
-This repository contains the KiCad files for an LoRa shield for Arduino Uno and some examples that may help you to get running your LoRa-based applications with the power of an Arduino UNO 
+This repository contains the KiCad files for a LoRa shield for Arduino Uno and some examples that may help you to get running your LoRa-based applications with the power of an Arduino UNO 
 
-- The folder named "LoRA_PHY_RH" refer to the communication
-P2P by the Physical layer of LoRa,in here you can find 2 examples one as the Transmitter (Which also  is capable of receive information) and the second as the receiver (Which also is capable of transmit e information), both examples work with the [RadioHead](http://www.airspayce.com/mikem/arduino/RadioHead/) library  
+- The folder named "LoRA_PHY_RH" refers to the communication
+P2P by the Physical layer of LoRa, in here you can find 2 examples one as the Transmitter (Which also  is capable of receiving information) and the second as the receiver (Which also is capable of transmitting information), both examples work with the [RadioHead](http://www.airspayce.com/mikem/arduino/RadioHead/) library  
 
-- The folder named "LoRA_PHY" refer to the communication
-P2P by the Physical layer of LoRa,in here you can find 2 examples one as the Transmitter and the second as the receiver, both examples work with the Official [LoRa](https://github.com/sandeepmistry/arduino-LoRa) library from arduino.
+- The folder named "LoRA_PHY" refers to the communication
+P2P by the Physical layer of LoRa, in here you can find 2 examples one as the Transmitter and the second as the receiver, both examples work with the Official [LoRa](https://github.com/sandeepmistry/arduino-LoRa) library from Arduino.
 
-- The folder named LoRa_WAN refer to the communication by a LoRaWAN network from your device to internet, by the two methods that exist OTAA and ABP, both examples were created to read an GPS or/and temperature from one analogic sensor attached to the analog input.
+- The folder named LoRa_WAN refers to the communication by a LoRaWAN network from your device to the internet, by the two methods that exist OTAA and ABP, both examples were created to read a GPS or/and temperature from one analogic sensor attached to the analog input.
 
-Electronic Cats invests time and resources providing this open source design, please support Electronic Cats and open-source hardware by purchasing products from Electronic Cats!
+Electronic Cats invests time and resources in providing this open-source design, please support Electronic Cats and open-source hardware by purchasing products from Electronic Cats!
 
 Designed by Electronic Cats.
-
-## Learn how to use CatWAN Arduino LoRa Shield
-
-Learn how to use the [CatWAN Arduino LoRa Shield by visiting the Wiki](https://github.com/ElectronicCats/CatWANShield/wiki).
 
 # License
 
 ![OpenSourceLicense](https://github.com/ElectronicCats/AjoloteBoard/raw/master/OpenSourceLicense.png)
 
-Firmware released under an GNU AGPL v3.0 license. See the LICENSE file for more information.
+Firmware released under a GNU AGPL v3.0 license. See the LICENSE file for more information.
 
-Hardware released under an CERN Open Hardware Licence v1.2. See the LICENSE_HARDWARE file for more information.
+Hardware released under a CERN Open Hardware Licence v1.2. See the LICENSE_HARDWARE file for more information.
 
-Electronic Cats is a registered trademark, please do not use if you sell these PCBs.
+Electronic Cats is a registered trademark, please do not use it if you sell these PCBs.
 
 5 Jul 2018
