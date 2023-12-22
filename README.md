@@ -33,7 +33,11 @@ Designed by Electronic Cats.
 
 # License
 
-![OpenSourceLicense](https://github.com/ElectronicCats/AjoloteBoard/raw/master/OpenSourceLicense.png)
+<a href="https://github.com/ElectronicCats">
+
+<img  src="https://github.com/ElectronicCats/AjoloteBoard/raw/master/OpenSourceLicense.png"  height="200" />
+
+</a>
 
 Firmware released under a GNU AGPL v3.0 license. See the LICENSE file for more information.
 
